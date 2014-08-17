@@ -75,3 +75,29 @@ if [[ ! -d "$TMPPREFIX" ]]; then
   mkdir -p "$TMPPREFIX"
 fi
 
+# Python installs binaries to /usr/local/share/python.
+PATH="/usr/local/share/python:$PATH";  export PATH
+PYTHONPATH="/usr/local/lib/python2.7/site-packages"; export PYTHONPATH
+
+# User-local binaries.
+PATH="$HOME/bin:$PATH"; export PATH
+
+alias be='bundle exec'
+alias livestreamer='/usr/local/bin/livestreamer --player /Applications/VLC.app/Contents/MacOS/VLC'
+alias youtube-dl='youtube-dl --title --continue'
+alias z='fasd_cd -d'
+
+# A "find-by-insensitive-filename" helper. Provide a single argument to search for files
+# whose name contain the substring, or two parameters if you want to specify a directory in
+# which to search:
+#
+#   ifind substring
+#   ifind directory substring
+function ifind () {
+  if [ "$2" != "" ]
+  then
+    find $1 -iname "*$2*"
+  else
+    find . -iname "*$1*"
+  fi
+}
