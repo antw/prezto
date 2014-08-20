@@ -46,7 +46,7 @@ function prompt_antw_setup {
 
   zstyle ':prezto:module:git:info' verbose 'yes'
   zstyle ':prezto:module:editor:info:completing' format '%B%F{red}...%f%b'
-  zstyle ':prezto:module:editor:info:keymap:primary' format ' %B%F{red}❯%F{yellow}❯%F{green}❯%f%b'
+  zstyle ':prezto:module:editor:info:keymap:primary' format ' $'
   zstyle ':prezto:module:editor:info:keymap:primary:overwrite' format ' %F{red}♺%f'
   zstyle ':prezto:module:editor:info:keymap:alternate' format ' %B%F{green}❮%F{yellow}❮%F{red}❮%f%b'
   zstyle ':prezto:module:git:info:action' format ':%%B%F{yellow}%s%f%%b'
